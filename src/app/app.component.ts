@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Pizza {
-  id: number;
-  name: string;
-  price: number;
-}
+import { Pizza } from './modele/pizza.modele';
 
 const PIZZAS : Pizza[] = [
   { id: 1, name: 'Reine', price: 12 },
@@ -13,7 +8,6 @@ const PIZZAS : Pizza[] = [
   { id: 4, name: 'Cannibale', price: 9 }
 ];
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,11 +15,11 @@ const PIZZAS : Pizza[] = [
 })
 export class AppComponent {
   title = 'pizzaparty';
-  selectedPizza: Pizza; 
-  pizzas:Pizza[] = PIZZAS; 
-
-  onSelect(pizza: Pizza) : void {
-    // on récupère la pizza cliquée
-    console.log(pizza); 
-  }
+  selectedPizza: Pizza;
+  pizzas: Pizza[] = PIZZAS;
+onSelect(pizza: Pizza): void{
+  //on recup au click la pizza
+  console.log(pizza);
+  this.selectedPizza = pizza;
+ }
 }
