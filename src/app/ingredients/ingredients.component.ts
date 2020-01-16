@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Ingredient } from '../models/ingredient.model'
 
 @Component({
@@ -8,6 +8,12 @@ import { Ingredient } from '../models/ingredient.model'
 })
 export class IngredientsComponent  {
 
-@Input() ingredients: Array<string> = []; 
+  @Input() ingredients: Array<string> = []; 
+
+  @Output() select: EventEmitter<Ingredient> = new EventEmitter(); 
+  
+  chooseIngredient(ingredient: Ingredient): void {
+    this.select.emit(ingredient); 
+  }
 
 }

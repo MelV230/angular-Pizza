@@ -1,6 +1,6 @@
 $color: lightgreen;
 
-li {
+.card {
     transition: 0.5s;
 
     &:hover, &.selected {
@@ -9,6 +9,5 @@ li {
     }
 }
 
-
-// Sans le & : li .selected{}
-// Avec le & : & .selected{}
+// Sans le & : li .selected {}
+// Avec le & : li.selected {}

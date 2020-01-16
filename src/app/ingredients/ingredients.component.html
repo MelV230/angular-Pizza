@@ -1,12 +1,12 @@
 <p>ingredients works !</p>
 
 <ul>
-    <li *ngFor="let ingredient of ingredients">
+    <li *ngFor="let ingredient of ingredients" (click)="chooseIngredient(ingredient)">
         <span>{{ ingredient.name }}</span><br/> 
         <img [src]="'/assets/ingredients/' + ingredient.image" width="100"> <br/>
 
         <span>{{ ingredient.price }}&euro;</span><br/>
-        <span>{{ ingredient.weight }}</span><br/>
+       
         
     </li>
 </ul>

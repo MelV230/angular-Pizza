@@ -27,15 +27,16 @@ export class AppComponent {
     age: null
   };
   ingredients: Ingredient[] = [
-    { name: 'tomate', image: 'tomate.jpg', weight: 50, price: 2},
-    { name: 'olive', image: 'olive.jpg', weight: 50, price: 1}
+    { name: 'Tomate', image: 'tomate.jpg', weight: 50, price: 2 },
+    { name: 'Olive', image: 'olive.jpeg', weight: 5, price: 1 }
   ];
+  selectedIngredient: Ingredient;
 
   constructor() {
-    this.calculateAge('1991-11-18');
+    this.calculateAge();
   }
 
-  private calculateAge(date: string): void {
+  private calculateAge(): void {
     let currentDate = Date.now(); // 2020-01-16 en timestamp (millisecondes)
     let birthDate = (new Date(this.user.birthday)).getTime(); // 1991-11-18 en timestamp (millisecondes)
     let timeDiff = currentDate - birthDate;
@@ -48,5 +49,10 @@ export class AppComponent {
     // On récupère la pizza cliquée
     console.log(pizza);
     this.selectedPizza = pizza;
+  }
+
+  selectIngredient(event: Ingredient) {
+    console.log(event);
+    this.selectedIngredient = event;
   }
 }

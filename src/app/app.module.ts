@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { AuthorComponent } from './author/author.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
+import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
 import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     PizzaComponent,
     AuthorComponent,
-    IngredientsComponent,
+    IngredientListComponent,
     MenuComponent
   ],
   imports: [
