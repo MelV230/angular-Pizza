@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pizza } from './modele/pizza.modele';
+import { Pizza } from './models/pizza.modele';
 
 const PIZZAS : Pizza[] = [
   { id: 1, name: 'Reine', price: 12 },
