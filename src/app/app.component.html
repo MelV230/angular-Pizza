@@ -1,27 +1,34 @@
-<h1>{{ title }}</h1>
-<app-pizza [pizza]="selectedPizza"></app-pizza>
+<app-menu [title]="title"
+          color="dark"
+></app-menu>
+
+<div class="container">
+
+  <h1>{{ title }}</h1>
+  <app-pizza [pizza]="selectedPizza"></app-pizza>
 
 
-<!--
-  <input [value]="selectedPizza.name" (keyup)="selectedPizza.name = $event.target.value">
--->
+  <!--
+    <input [value]="selectedPizza.name" (keyup)="selectedPizza.name = $event.target.value">
+  -->
 
-<h2>Les pizzas</h2>
+  <h2>Les pizzas</h2>
 
-<ul>
-  <li *ngFor="let pizza of pizzas" (click)="onSelect(pizza)">
-    {{ pizza.name }}
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let pizza of pizzas" (click)="onSelect(pizza)" [class.selected] = "pizza === selectedPizza">
+      {{ pizza.name }}
+    </li>
+  </ul>
 
-<h1>Les TPs : </h1>
-<br/>
+  <h1>Les TPs : </h1>
+  <br/>
 
-<app-author [user]="user"></app-author>
+  <app-author [user]="user"></app-author>
 
-<br/> 
+  <br/> 
 
-<app-ingredients [ingredients]="ingredients"></app-ingredients>
+  <app-ingredients [ingredients]="ingredients"></app-ingredients>
 
+</div>
 
 
