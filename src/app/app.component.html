@@ -3,18 +3,5 @@
 ></app-menu>
 
 <div class="container">
-
   <router-outlet></router-outlet>
-  <h1>{{ title }}</h1>
- 
-  
-  <h2>Les TPs :</h2>
-  <app-author [user]="user"></app-author>
-  <app-ingredient-list [ingredients]="ingredients" (select)="selectIngredient($event)"></app-ingredient-list>
-  <br/><br/>
-
-  <h2>Les pipes</h2>
-  <br/>
-  <p>TVA 20% : {{ 10 | tax }}</p>
-  <p>TVA 65% : {{ 10 | tax:65 }}</p>
 </div>
