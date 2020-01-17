@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { Pizza } from './models/pizza.model';
 import { User } from './models/user.model';
 import { Ingredient } from './models/ingredient.model';
@@ -15,6 +15,8 @@ const PIZZAS: Pizza[] = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
   title = 'Pizza Party';
   selectedPizza: Pizza;

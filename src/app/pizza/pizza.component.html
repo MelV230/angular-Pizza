@@ -1,7 +1,8 @@
 <div *ngIf="pizza">
     <h2>{{ pizza?.name }}</h2>
     <div>ID: {{ pizza.id }}</div>
-    <div>Prix: {{ pizza.price }}</div>
+    <div>Prix HT : {{ pizza.price }}</div>
+    <div>Prix TTC : {{ pizza.price | tax}}</div>
 
     <!-- ngModel est une directive d'Angular -->
     <input [(ngModel)]="pizza.name">
