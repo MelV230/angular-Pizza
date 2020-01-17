@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from '../pizza.service';
-import { Pizza } from "../models/pizza.model"; 
+import { Pizza } from '../models/pizza.model';
 
 @Component({
   selector: 'app-pizza-list',
@@ -8,13 +8,13 @@ import { Pizza } from "../models/pizza.model";
   styleUrls: ['./pizza-list.component.scss']
 })
 export class PizzaListComponent implements OnInit {
-  pizzas: Pizza[] = []; 
+  pizzas: Pizza[] = [];
 
-  constructor(private pizzaService: PizzaService){}
+  constructor(private pizzaService: PizzaService) { }
 
   ngOnInit() {
-    // On récupère les pizzas via le service de l'API 
-    this.pizzaService.getPizzas().then(pizzas => this.pizzas = pizzas); 
+    // On récupère les pizzas via le service sur l'API
+    this.pizzaService.getPizzas().then(pizzas => this.pizzas = pizzas);
   }
 
 }

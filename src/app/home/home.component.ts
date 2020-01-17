@@ -4,8 +4,6 @@ import { User } from '../models/user.model';
 import { Ingredient } from '../models/ingredient.model';
 import { PizzaService } from '../pizza.service';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +12,7 @@ import { PizzaService } from '../pizza.service';
 export class HomeComponent {
   selectedPizza: Pizza;
   pizzas: Pizza[] = [];
+  number = 2;
   user: User = {
     name: 'Mota',
     firstname: 'Matthieu',
@@ -27,22 +26,21 @@ export class HomeComponent {
   ];
   selectedIngredients: Ingredient[] = [];
 
-
-  // J'injecte le service dans le composant 
-
+  // J'injecte le service dans le composant
+  // import { PizzaService } from '../pizza.service';
   constructor(private pizzaService: PizzaService) {
-  
+    // Constructeur vide
   }
 
+  // Le composant Angular s'initialise
+  // Document ready pour Angular
   ngOnInit() {
-
     this.calculateAge();
-    // On récupère les pizzas dans le serice 
-    this.pizzaService.getPizzas();
-      
+    // On récupère les pizzas dans le service
+    this.pizzaService.getPizzas().then(
+      pizzas => this.pizzas = pizzas
+    );
   }
-
-
 
   private calculateAge(): void {
     let currentDate = Date.now(); // 2020-01-16 en timestamp (millisecondes)

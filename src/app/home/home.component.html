@@ -7,8 +7,14 @@
 
 <h2>Les pizzas</h2>
 
+<input type="range" value="2"
+       step="1"
+       min="1"
+       [max]="pizzas.length"
+       [(ngModel)]="number"
+       *ngIf="pizzas.length > 0">
 <div class="row">
-    <div *ngFor="let pizza of pizzas"
+    <div *ngFor="let pizza of pizzas | slice:0:number"
         (click)="onSelect(pizza)"
         class="col-3"
     >
@@ -17,7 +23,7 @@
                 <h5 class="card-title">{{ pizza.name }}</h5>
                 <p>Prix HT : {{ pizza.price }}</p>
                 <p>Prix TTC : {{ pizza.price | tax }}</p>
-                <a routerLink="/pizzas/{{ pizza.id}}" class="btn btn-primary">Voir la Pizza</a>
+                <a routerLink="/pizzas/{{ pizza.id }}" class="btn btn-primary">Voir la pizza</a>
                 <span *ngFor="let selectedIngredient of selectedIngredients; index as i"
                 class="badge badge-primary"
                 >
